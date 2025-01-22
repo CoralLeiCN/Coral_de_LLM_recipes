@@ -2,7 +2,21 @@ from torch.utils import benchmark
 import torch
 
 
-def benchmark_GEMM(matrix_shape, dtype=torch.float16, device="cuda", number=50):
+# determine device
+def get_device():
+    if torch.cuda.is_available():
+        return "cuda"
+    elif torch.backends.mps.is_available():
+        return "mps"
+    else:
+        return "cpu"
+
+
+def benchmark_GEMM(matrix_shape, dtype=torch.float16, device=None, number=50):
+    if device is None:
+        device = get_device()
+        print(f"device is None, automatically set to {device}")
+
     device = torch.device(device)
     typ = dtype
     # get bytes based on the dtype
@@ -31,8 +45,6 @@ def benchmark_GEMM(matrix_shape, dtype=torch.float16, device="cuda", number=50):
     # median tflops
     tflops = number_FLOPS / x.mean / 1e12
 
-    print(
-        f"tflops: {tflops}, x: {x.mean}, arithmetic_intensity: {arithmetic_intensity}"
-    )
+    print(f"tflops: {tflops}, x: {x.mean}, arithmetic_intensity: {arithmetic_intensity}")
 
     return tflops, x, arithmetic_intensity
