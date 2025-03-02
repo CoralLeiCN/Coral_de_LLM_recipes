@@ -19,6 +19,9 @@ dependencies = [
  "torchvision",
  "transformers>=4.48.3",
  "trl>=0.15.1",
+ "opentelemetry-sdk>=1.30.0",
+ "opentelemetry-exporter-otlp>=1.30.0",
+ "openinference-instrumentation-smolagents>=0.1.6",
 ]
 
 
