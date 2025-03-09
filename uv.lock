@@ -393,6 +393,7 @@ dependencies = [
     { name = "bitsandbytes" },
     { name = "datasets" },
     { name = "google-genai" },
+    { name = "gradio-client" },
     { name = "ipywidgets" },
     { name = "jupyter" },
     { name = "langchain-core" },
@@ -427,6 +428,7 @@ requires-dist = [
     { name = "bitsandbytes", specifier = ">=0.45.3" },
     { name = "datasets", specifier = ">=3.3.2" },
     { name = "google-genai", specifier = ">=1.5.0" },
+    { name = "gradio-client", specifier = ">=1.7.2" },
     { name = "ipywidgets", specifier = ">=8.1.5" },
     { name = "jupyter", specifier = ">=1.1.1" },
     { name = "langchain-core", specifier = ">=0.3.36" },
@@ -780,6 +782,23 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/31/e1/fbffb85a624f1404133b5bb624834e77e0f549e2b8548146fe18c56e1411/googleapis_common_protos-1.67.0.tar.gz", hash = "sha256:21398025365f138be356d5923e9168737d94d46a72aefee4a6110a1f23463c86", size = 57344 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/89/30/2bd0eb03a7dee7727cd2ec643d1e992979e62d5e7443507381cce0455132/googleapis_common_protos-1.67.0-py2.py3-none-any.whl", hash = "sha256:579de760800d13616f51cf8be00c876f00a9f146d3e6510e19d1f4111758b741", size = 164985 },
+]
+
+[[package]]
+name = "gradio-client"
+version = "1.7.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "fsspec" },
+    { name = "httpx" },
+    { name = "huggingface-hub" },
+    { name = "packaging" },
+    { name = "typing-extensions" },
+    { name = "websockets" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/65/b8/682e1868c47ce723fece65ae71405a560a8455d1e06bd70d4f60c1e6ac03/gradio_client-1.7.2.tar.gz", hash = "sha256:e3f1e1a63292a06a22a748719849bc6dbacdc89645f089c219f3d7a24e68d183", size = 320199 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/95/cb/002424d4f5af1425f9cfe7dcee3ed795ed1367bf0f185a6c4bf81385e1d6/gradio_client-1.7.2-py3-none-any.whl", hash = "sha256:50d61b4db3e87639430a121a7cde4303055486ed72a5035edae94b4fbe6a0e6b", size = 322052 },
 ]
 
 [[package]]

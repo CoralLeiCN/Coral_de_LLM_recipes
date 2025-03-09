@@ -24,6 +24,7 @@ dependencies = [
  "openinference-instrumentation-smolagents>=0.1.6",
  "google-genai>=1.5.0",
  "litellm>=1.63.3",
+ "gradio-client>=1.7.2",
 ]
 
 
