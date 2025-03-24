@@ -381,7 +381,7 @@ dependencies = [
     { name = "rank-bm25" },
     { name = "selenium" },
     { name = "shapely" },
-    { name = "smolagents" },
+    { name = "smolagents", extra = ["e2b"] },
     { name = "tensorboardx" },
     { name = "torch" },
     { name = "torchvision" },
@@ -421,7 +421,7 @@ requires-dist = [
     { name = "rank-bm25", specifier = ">=0.2.2" },
     { name = "selenium", specifier = ">=4.30.0" },
     { name = "shapely", specifier = ">=2.0.7" },
-    { name = "smolagents", specifier = ">=1.12.0" },
+    { name = "smolagents", extras = ["e2b"], specifier = ">=1.12.0" },
     { name = "tensorboardx", specifier = ">=2.6.2.2" },
     { name = "torch", specifier = ">=2.5.1" },
     { name = "torchvision", specifier = ">=0.20.1" },
@@ -543,6 +543,38 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/f2/2b/0b6874f96405ce474f97fd3bd890aee8bd73cf3ed42f1cb754c911a3cde8/duckduckgo_search-7.5.3.tar.gz", hash = "sha256:401757168f9c3521919bfc5e11b4e1a28cc6cde94c5326ff0eed683d27830fa9", size = 24580 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ad/eb/89e19ce7bb9aecf6ca4453af8314545c85389852ee0edda8424f549abe74/duckduckgo_search-7.5.3-py3-none-any.whl", hash = "sha256:0a5ae49f437d12caeb2ddf2f639057801b8dd7114fa1d1bda3aca15c31eae93f", size = 20227 },
+]
+
+[[package]]
+name = "e2b"
+version = "1.3.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "attrs" },
+    { name = "httpcore" },
+    { name = "httpx" },
+    { name = "packaging" },
+    { name = "protobuf" },
+    { name = "python-dateutil" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b0/cd/7f9cba32485aeec2222f73c446f9d6dd2d929a77ebcb6d14fa88d119ecb1/e2b-1.3.1.tar.gz", hash = "sha256:d704faa618f0c7b3a4374654443609522a589189ece24d791129e9722f266e75", size = 51248 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c2/f3/20650b526a22adc8cfc9021eecd92342eb2a862f9c3702f963385888bd5e/e2b-1.3.1-py3-none-any.whl", hash = "sha256:2c7fa76e7a8614ebbc0df7f0863275284f9cd4afba7dc631e1c1471658809c37", size = 95906 },
+]
+
+[[package]]
+name = "e2b-code-interpreter"
+version = "1.1.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "attrs" },
+    { name = "e2b" },
+    { name = "httpx" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/4c/a0/aa992090fc02ea7eeafce9b4fc122546c8dd81e85810c0d06bfd4c29a6a2/e2b_code_interpreter-1.1.1.tar.gz", hash = "sha256:b13091f75fc127ad3a268b8746e5da996c6734f432e606fcd4f3897a5b1c2bf0", size = 9288 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8f/40/dcdc47d039dd85e74df2532a01e9d47031fbfdfdc20c0b2de4e42b557271/e2b_code_interpreter-1.1.1-py3-none-any.whl", hash = "sha256:f56450b192456f24df89b9159d1067d50c7133d587ab12116144638969409578", size = 12049 },
 ]
 
 [[package]]
@@ -2917,6 +2949,12 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/6a/d0/988aae54931ead41f843c0bd1882f5671350ccb907f58d4f00a8570981a4/smolagents-1.12.0.tar.gz", hash = "sha256:0c3c534ea6335595a1c7b0d10de5abf59ac4a626d340428731f457fe9104aaca", size = 140196 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/57/86/5654f63af5aaec58f394ea69e8b986ca542ff1cc780a9b55c7b858c91944/smolagents-1.12.0-py3-none-any.whl", hash = "sha256:dc8472e35866d956a2d2c2884ba1cb9599cb93729a198bb424998313a8d79ce5", size = 105285 },
+]
+
+[package.optional-dependencies]
+e2b = [
+    { name = "e2b-code-interpreter" },
+    { name = "python-dotenv" },
 ]
 
 [[package]]
