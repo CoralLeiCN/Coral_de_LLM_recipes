@@ -33,6 +33,9 @@ dependencies = [
  "geopandas>=1.0.1",
  "shapely>=2.0.7",
  "kaleido==1.0.0rc0",
+ "helium>=5.1.1",
+ "selenium>=4.30.0",
+ "python-dotenv>=1.0.1",
 ]
 
 
