@@ -524,6 +524,7 @@ dependencies = [
     { name = "langgraph" },
     { name = "litellm" },
     { name = "llama-index" },
+    { name = "llama-index-callbacks-arize-phoenix" },
     { name = "llama-index-embeddings-google-genai" },
     { name = "llama-index-llms-google-genai" },
     { name = "llama-index-vector-stores-chroma" },
@@ -569,6 +570,7 @@ requires-dist = [
     { name = "langgraph", specifier = ">=0.2.73" },
     { name = "litellm", specifier = ">=1.63.3" },
     { name = "llama-index", specifier = ">=0.12.25" },
+    { name = "llama-index-callbacks-arize-phoenix", specifier = ">=0.4.0" },
     { name = "llama-index-embeddings-google-genai", specifier = ">=0.1.0" },
     { name = "llama-index-llms-google-genai", specifier = ">=0.1.6" },
     { name = "llama-index-vector-stores-chroma", specifier = ">=0.4.1" },
@@ -1867,6 +1869,19 @@ wheels = [
 ]
 
 [[package]]
+name = "llama-index-callbacks-arize-phoenix"
+version = "0.4.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "llama-index-core" },
+    { name = "openinference-instrumentation-llama-index" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f2/a9/7343b6cda13c947fd16ca14cfb077d5b283739ceed78387a66ff2ff24c06/llama_index_callbacks_arize_phoenix-0.4.0.tar.gz", hash = "sha256:f7ae7673d868fdbdb472d8e06758840ad2c5dcdd749db3bff787bea68a6b148d", size = 2551 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/6f/b8/821f21af03fdbddf34cd09d196bfd3e9b5b4987885b59eb40ea1a5b4815f/llama_index_callbacks_arize_phoenix-0.4.0-py3-none-any.whl", hash = "sha256:0fdf98924ca0791cb802d11cb9ccbeecf49efc0bc7f0a4a60feb3f7516442eda", size = 3086 },
+]
+
+[[package]]
 name = "llama-index-cli"
 version = "0.4.1"
 source = { registry = "https://pypi.org/simple" }
@@ -2601,6 +2616,24 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/ab/3d/0ffbb10a4a924d7f07ed0925418ca0578d39b4aebf20d65276ea7da6a54c/openinference_instrumentation-0.1.24.tar.gz", hash = "sha256:25e71f4af281afd7a8bb8f0b72258e55f5008c2843bda377618f24b88655e2fa", size = 16983 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/2f/eb/069b79e261fbdcec85aa058762e95fa8fdafbb51a0d1765e79292ae0d561/openinference_instrumentation-0.1.24-py3-none-any.whl", hash = "sha256:9c01e3a2dc4f4cd97008c80dfb6dd03d2ec5a27f10f85f7b108fc892dbba36b4", size = 19431 },
+]
+
+[[package]]
+name = "openinference-instrumentation-llama-index"
+version = "3.3.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "openinference-instrumentation" },
+    { name = "openinference-semantic-conventions" },
+    { name = "opentelemetry-api" },
+    { name = "opentelemetry-instrumentation" },
+    { name = "opentelemetry-semantic-conventions" },
+    { name = "typing-extensions" },
+    { name = "wrapt" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/dc/60/00bf85c5cf87b0db392319b70a4f1dad934c36d9fe3e6a33ca913c1d00a9/openinference_instrumentation_llama_index-3.3.3.tar.gz", hash = "sha256:511fef7a7a76bd85d4407fefa6d628c490c9f045b6120ce68bf7393d4f972fd2", size = 55276 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0e/af/9d4daae3bc8f1902047df2dd4cf2d03426725567f51ef058d6e6c2b454fb/openinference_instrumentation_llama_index-3.3.3-py3-none-any.whl", hash = "sha256:6c46bc0d28226a128aa6a4de4c05bf6c442db4e5b46dad3d89887573f679dad5", size = 26188 },
 ]
 
 [[package]]
