@@ -527,6 +527,7 @@ dependencies = [
     { name = "llama-index-callbacks-arize-phoenix" },
     { name = "llama-index-embeddings-google-genai" },
     { name = "llama-index-llms-google-genai" },
+    { name = "llama-index-tools-google" },
     { name = "llama-index-vector-stores-chroma" },
     { name = "llama-index-vector-stores-postgres" },
     { name = "openinference-instrumentation-smolagents" },
@@ -573,6 +574,7 @@ requires-dist = [
     { name = "llama-index-callbacks-arize-phoenix", specifier = ">=0.4.0" },
     { name = "llama-index-embeddings-google-genai", specifier = ">=0.1.0" },
     { name = "llama-index-llms-google-genai", specifier = ">=0.1.6" },
+    { name = "llama-index-tools-google", specifier = ">=0.3.0" },
     { name = "llama-index-vector-stores-chroma", specifier = ">=0.4.1" },
     { name = "llama-index-vector-stores-postgres", specifier = ">=0.4.2" },
     { name = "openinference-instrumentation-smolagents", specifier = ">=0.1.6" },
@@ -912,6 +914,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/56/be/217a598a818567b28e859ff087f347475c807a5649296fb5a817c58dacef/google-auth-httplib2-0.2.0.tar.gz", hash = "sha256:38aa7badf48f974f1eb9861794e9c0cb2a0511a4ec0679b1f886d108f5640e05", size = 10842 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/be/8a/fe34d2f3f9470a27b01c9e76226965863f153d5fbe276f83608562e49c04/google_auth_httplib2-0.2.0-py2.py3-none-any.whl", hash = "sha256:b65a0a2123300dd71281a7bf6e64d65a0759287df52729bdd1ae2e47dc311a3d", size = 9253 },
+]
+
+[[package]]
+name = "google-auth-oauthlib"
+version = "1.2.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "google-auth" },
+    { name = "requests-oauthlib" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/cc/0f/1772edb8d75ecf6280f1c7f51cbcebe274e8b17878b382f63738fd96cee5/google_auth_oauthlib-1.2.1.tar.gz", hash = "sha256:afd0cad092a2eaa53cd8e8298557d6de1034c6cb4a740500b5357b648af97263", size = 24970 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1a/8e/22a28dfbd218033e4eeaf3a0533b2b54852b6530da0c0fe934f0cc494b29/google_auth_oauthlib-1.2.1-py2.py3-none-any.whl", hash = "sha256:2d58a27262d55aa1b87678c3ba7142a080098cbc2024f903c62355deb235d91f", size = 24930 },
 ]
 
 [[package]]
@@ -2062,6 +2077,22 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/35/30/4611821286f82ba7b5842295607baa876262db86f88b87d83595eed172bf/llama_index_readers_llama_parse-0.4.0.tar.gz", hash = "sha256:e99ec56f4f8546d7fda1a7c1ae26162fb9acb7ebcac343b5abdb4234b4644e0f", size = 2472 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/68/4f/e30d4257fe9e4224f5612b77fe99aaceddae411b2e74ca30534491de3e6f/llama_index_readers_llama_parse-0.4.0-py3-none-any.whl", hash = "sha256:574e48386f28d2c86c3f961ca4a4906910312f3400dd0c53014465bfbc6b32bf", size = 2472 },
+]
+
+[[package]]
+name = "llama-index-tools-google"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "beautifulsoup4" },
+    { name = "google-api-python-client" },
+    { name = "google-auth-httplib2" },
+    { name = "google-auth-oauthlib" },
+    { name = "llama-index-core" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/50/91/a4638bb91037eba6293839b89fc7581bfdc7f27c775ab3b2b20850e2f426/llama_index_tools_google-0.3.0.tar.gz", hash = "sha256:269826407a0fe0510f5c2e305d3c4185d446f893ff18dc7a3b8d57a8dc3605e9", size = 6263 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b6/ff/2f2ddaf7db4c3c0084941d8bc5dc37775203c3f3bcb0f8f3b199bf16b081/llama_index_tools_google-0.3.0-py3-none-any.whl", hash = "sha256:7251066171c604ab58fff186bbcd3941b95e59c9bc9d314af09726291db049be", size = 8219 },
 ]
 
 [[package]]

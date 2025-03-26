@@ -42,6 +42,7 @@ dependencies = [
  "llama-index-embeddings-google-genai>=0.1.0",
  "llama-index-llms-google-genai>=0.1.6",
  "llama-index-callbacks-arize-phoenix>=0.4.0",
+ "llama-index-tools-google>=0.3.0",
 ]
 
 
