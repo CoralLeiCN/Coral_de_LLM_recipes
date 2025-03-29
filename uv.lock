@@ -528,6 +528,7 @@ dependencies = [
     { name = "llama-index-embeddings-google-genai" },
     { name = "llama-index-llms-google-genai" },
     { name = "llama-index-tools-google" },
+    { name = "llama-index-utils-workflow" },
     { name = "llama-index-vector-stores-chroma" },
     { name = "llama-index-vector-stores-postgres" },
     { name = "openinference-instrumentation-smolagents" },
@@ -575,6 +576,7 @@ requires-dist = [
     { name = "llama-index-embeddings-google-genai", specifier = ">=0.1.0" },
     { name = "llama-index-llms-google-genai", specifier = ">=0.1.6" },
     { name = "llama-index-tools-google", specifier = ">=0.3.0" },
+    { name = "llama-index-utils-workflow", specifier = ">=0.3.0" },
     { name = "llama-index-vector-stores-chroma", specifier = ">=0.4.1" },
     { name = "llama-index-vector-stores-postgres", specifier = ">=0.4.2" },
     { name = "openinference-instrumentation-smolagents", specifier = ">=0.1.6" },
@@ -1354,6 +1356,15 @@ wheels = [
 ]
 
 [[package]]
+name = "jsonpickle"
+version = "4.0.5"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d6/33/4bda317ab294722fcdfff8f63aab74af9fda3675a4652d984a101aa7587e/jsonpickle-4.0.5.tar.gz", hash = "sha256:f299818b39367c361b3f26bdba827d4249ab5d383cd93144d0f94b5417aacb35", size = 315661 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/dc/1b/0e79cf115e0f54f1e8f56effb6ffd2ef8f92e9c324d692ede660067f1bfe/jsonpickle-4.0.5-py3-none-any.whl", hash = "sha256:b4ac7d0a75ddcdfd93445737f1d36ff28768690d43e54bf5d0ddb1d915e580df", size = 46382 },
+]
+
+[[package]]
 name = "jsonpointer"
 version = "3.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -2093,6 +2104,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/50/91/a4638bb91037eba6293839b89fc7581bfdc7f27c775ab3b2b20850e2f426/llama_index_tools_google-0.3.0.tar.gz", hash = "sha256:269826407a0fe0510f5c2e305d3c4185d446f893ff18dc7a3b8d57a8dc3605e9", size = 6263 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b6/ff/2f2ddaf7db4c3c0084941d8bc5dc37775203c3f3bcb0f8f3b199bf16b081/llama_index_tools_google-0.3.0-py3-none-any.whl", hash = "sha256:7251066171c604ab58fff186bbcd3941b95e59c9bc9d314af09726291db049be", size = 8219 },
+]
+
+[[package]]
+name = "llama-index-utils-workflow"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "llama-index-core" },
+    { name = "pyvis" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/6e/b3/4ed89532f49b9ee2d8d09d36909041362109713df347f096135ccb2869e8/llama_index_utils_workflow-0.3.0.tar.gz", hash = "sha256:d9bc1f86d59777fa5835eed5c99a0cd074b760efdafc0832404b1ffc2d786ed3", size = 2571 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ea/be/b7b8906da0c815f5488253a765c5166ef954e5fada5c66f908beb9fc85ac/llama_index_utils_workflow-0.3.0-py3-none-any.whl", hash = "sha256:0fc0ad2466fb39adeed0c0d585c6d8b8777aaeba3c09af89fed052697639b971", size = 2846 },
 ]
 
 [[package]]
@@ -3413,6 +3437,20 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/5f/57/df1c9157c8d5a05117e455d66fd7cf6dbc46974f832b1058ed4856785d8a/pytz-2025.1.tar.gz", hash = "sha256:c2db42be2a2518b28e65f9207c4d05e6ff547d1efa4086469ef855e4ab70178e", size = 319617 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/eb/38/ac33370d784287baa1c3d538978b5e2ea064d4c1b93ffbd12826c190dd10/pytz-2025.1-py2.py3-none-any.whl", hash = "sha256:89dd22dca55b46eac6eda23b2d72721bf1bdfef212645d81513ef5d03038de57", size = 507930 },
+]
+
+[[package]]
+name = "pyvis"
+version = "0.3.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "ipython" },
+    { name = "jinja2" },
+    { name = "jsonpickle" },
+    { name = "networkx" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ab/4b/e37e4e5d5ee1179694917b445768bdbfb084f5a59ecd38089d3413d4c70f/pyvis-0.3.2-py3-none-any.whl", hash = "sha256:5720c4ca8161dc5d9ab352015723abb7a8bb8fb443edeb07f7a322db34a97555", size = 756038 },
 ]
 
 [[package]]
