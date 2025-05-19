@@ -1,42 +1,26 @@
-import datasets
-from langchain.docstore.document import Document
-from langchain_community.retrievers import BM25Retriever
-from smolagents import CodeAgent, Tool
+import random
 
-from utils import gemini_model_OpenAIServer
-from retriever import GuestInfoRetrieverTool
-# Load the dataset
-guest_dataset = datasets.load_dataset("agents-course/unit3-invitees", split="train")
-
-# Convert dataset entries into Document objects
-docs = [
-    Document(
-        page_content="\n".join(
-            [
-                f"Name: {guest['name']}",
-                f"Relation: {guest['relation']}",
-                f"Description: {guest['description']}",
-                f"Email: {guest['email']}",
-            ]
-        ),
-        metadata={"name": guest["name"]},
-    )
-    for guest in guest_dataset
-]
+from smolagents import Tool
 
 
+class WeatherInfoTool(Tool):
+    name = "weather_info"
+    description = "Fetches dummy weather information for a given location."
+    inputs = {
+        "location": {
+            "type": "string",
+            "description": "The location to get weather information for.",
+        }
+    }
+    output_type = "string"
 
-# Initialize the tool
-guest_info_tool = GuestInfoRetrieverTool(docs)
-
-
-# Initialize the Hugging Face model
-model = gemini_model_OpenAIServer("gemini-2.0-flash")
-# Create Alfred, our gala agent, with the guest info tool
-alfred = CodeAgent(tools=[guest_info_tool], model=model)
-
-# Example query Alfred might receive during the gala
-response = alfred.run("Tell me about our guest named 'Lady Ada Lovelace'.")
-
-print("🎩 Alfred's Response:")
-print(response)
+    def forward(self, location: str):
+        # Dummy weather data
+        weather_conditions = [
+            {"condition": "Rainy", "temp_c": 15},
+            {"condition": "Clear", "temp_c": 25},
+            {"condition": "Windy", "temp_c": 20},
+        ]
+        # Randomly select a weather condition
+        data = random.choice(weather_conditions)
+        return f"Weather in {location}: {data['condition']}, {data['temp_c']}°C"
