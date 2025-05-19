@@ -53,9 +53,7 @@ def save_screenshot(memory_step: ActionStep, agent: CodeAgent) -> None:
     driver = helium.get_driver()
     current_step = memory_step.step_number
     if driver is not None:
-        for (
-            previous_memory_step
-        ) in (
+        for previous_memory_step in (
             agent.memory.steps
         ):  # Remove previous screenshots from logs for lean processing
             if (

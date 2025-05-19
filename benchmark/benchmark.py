@@ -45,6 +45,8 @@ def benchmark_GEMM(matrix_shape, dtype=torch.float16, device=None, number=50):
     # median tflops
     tflops = number_FLOPS / x.mean / 1e12
 
-    print(f"tflops: {tflops}, x: {x.mean}, arithmetic_intensity: {arithmetic_intensity}")
+    print(
+        f"tflops: {tflops}, x: {x.mean}, arithmetic_intensity: {arithmetic_intensity}"
+    )
 
     return tflops, x, arithmetic_intensity
