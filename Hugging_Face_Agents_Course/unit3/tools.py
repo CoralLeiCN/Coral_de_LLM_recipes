@@ -1,5 +1,6 @@
 import random
 
+from huggingface_hub import list_models
 from smolagents import Tool
 
 
@@ -24,3 +25,30 @@ class WeatherInfoTool(Tool):
         # Randomly select a weather condition
         data = random.choice(weather_conditions)
         return f"Weather in {location}: {data['condition']}, {data['temp_c']}°C"
+
+
+class HubStatsTool(Tool):
+    name = "hub_stats"
+    description = "Fetches the most downloaded model from a specific author on the Hugging Face Hub."
+    inputs = {
+        "author": {
+            "type": "string",
+            "description": "The username of the model author/organization to find models from.",
+        }
+    }
+    output_type = "string"
+
+    def forward(self, author: str):
+        try:
+            # List models from the specified author, sorted by downloads
+            models = list(
+                list_models(author=author, sort="downloads", direction=-1, limit=1)
+            )
+
+            if models:
+                model = models[0]
+                return f"The most downloaded model by {author} is {model.id} with {model.downloads:,} downloads."
+            else:
+                return f"No models found for author {author}."
+        except Exception as e:
+            return f"Error fetching models for {author}: {str(e)}"

@@ -5,7 +5,7 @@ from langchain.docstore.document import Document
 from langchain_community.retrievers import BM25Retriever
 from retriever import GuestInfoRetrieverTool
 from smolagents import CodeAgent, DuckDuckGoSearchTool, Tool
-from tools import WeatherInfoTool
+from tools import WeatherInfoTool, HubStatsTool
 from utils import gemini_model_OpenAIServer
 
 # Load the dataset
@@ -54,3 +54,10 @@ print(results)
 
 # Initialize the tool
 weather_info_tool = WeatherInfoTool()
+
+
+# Initialize the tool
+hub_stats_tool = HubStatsTool()
+
+# Example usage
+print(hub_stats_tool("facebook"))  # Example: Get the most downloaded model by Facebook
