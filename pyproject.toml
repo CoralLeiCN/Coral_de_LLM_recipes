@@ -44,6 +44,7 @@ dependencies = [
  "llama-index-tools-google>=0.3.0",
  "llama-index-utils-workflow>=0.3.0",
  "smolagents>=1.16.1",
+ "duckduckgo-search>=8.0.2",
 ]
 
 
