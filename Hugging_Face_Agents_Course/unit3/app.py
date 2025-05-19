@@ -44,20 +44,16 @@ print("🎩 Alfred's Response:")
 print(response)
 
 
-# Initialize the DuckDuckGo search tool
+# Initialize the tool
 search_tool = DuckDuckGoSearchTool()
-
-# Example usage
-results = search_tool("Who's the current President of France?")
-print(results)
-
-
-# Initialize the tool
 weather_info_tool = WeatherInfoTool()
-
-
-# Initialize the tool
 hub_stats_tool = HubStatsTool()
 
-# Example usage
-print(hub_stats_tool("facebook"))  # Example: Get the most downloaded model by Facebook
+# Create Alfred with all the tools
+alfred = CodeAgent(
+    tools=[search_tool, weather_info_tool, hub_stats_tool], 
+    model=model
+)
+
+# Example query Alfred might receive during the gala
+response = alfred.run("What is Facebook and what's their most popular model?")
